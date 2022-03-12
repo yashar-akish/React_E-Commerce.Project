@@ -16,7 +16,7 @@ const Nav = () => {
           <Link to='/' >
             <img src={logo} alt="comfy sloth" />
           </Link>
-          <button className="nav-toggle"><FaBars /></button>
+          <button type="button" className="nav-toggle"><FaBars /></button>
         </div>
         <ul className="nav-links">
           {links.map((link)=> {
