@@ -1,8 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import { ImReply } from "react-icons/im"
+
 const ErrorPage = () => {
-  return <h4>error page</h4>
+  return (
+    <Wrapper className='page-100'>
+      <section>
+        <h1>404</h1>
+        <h3>Sorry, page not found</h3>
+        <Link to='/' className='btn' >back <ImReply /></Link>
+      </section>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.main`
