@@ -25,6 +25,7 @@ const SingleProductPage = () => {
 
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
   useEffect(() => {
     if (error) {
@@ -32,6 +33,7 @@ const SingleProductPage = () => {
         history.push('/');
       }, 3000);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [error]);
   if (loading) return <Loading />;
   if (error) return <Error />;
@@ -57,7 +59,7 @@ const SingleProductPage = () => {
           <ProductImages images={images}/>
           <section className="content">
             <h2>{name}</h2>
-            <Stars />
+            <Stars stars={stars} reviews={reviews}/>
             <h5 className="price">{formatPrice(price)}</h5>
             <p className='desc'>{description}</p>
             <p className="info">
