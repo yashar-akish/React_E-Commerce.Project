@@ -24,20 +24,35 @@ const SingleProductPage = () => {
   } = useProductsContext();
 
   useEffect(() => {
-    fetchSingleProduct(`s${url}${id}`)
-  },[id]);
+    fetchSingleProduct(`${url}${id}`);
+  }, [id]);
   useEffect(() => {
     if (error) {
       setTimeout(() => {
-        history.push('/')
-      }, 3000)
+        history.push('/');
+      }, 3000);
     }
-  }, [error])
+  }, [error]);
   if (loading) return <Loading />;
   if (error) return <Error />;
 
-  console.log(product);
-  return <h4>single product page</h4>;
+  const {
+    name,
+    price,
+    description,
+    stock,
+    stars,
+    reviews,
+    id: sku,
+    company,
+    images,
+  } = product;
+
+  return (
+    <Wrapper >
+      <PageHero title={name} product/>
+    </Wrapper>
+  );
 };
 
 const Wrapper = styled.main`
